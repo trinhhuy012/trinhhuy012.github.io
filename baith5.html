@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài thực hanành 5</title>
+</head>
+<style>
+    header{
+        /*background-color: black;*/
+        height: 70px;
+    }
+    li{
+        font-family: "Inter", sans-serif;
+        font-weight: bold;
+
+    }
+    a{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 13px;
+        /*color: rgba(13, 110, 253, 1);*/
+        color: black;
+    }
+    a:hover{
+        color: rgba(13, 110, 253, 1);
+
+    }
+    img{
+        color: rgba(13, 110, 253, 1);
+    }
+    .logo{
+        margin-left: 60px;
+    }
+    #show:hover li{
+        /*display: block;*/
+        visibility: visible;
+        margin-left: 10px;
+    }
+    .hidden{
+        /*display: none;*/
+        visibility: hidden;
+        margin-top: 21px;
+        padding-left: 0px;
+    }
+/**/
+    h6{
+        color: rgba(13, 110, 253, 1);
+        font-size: 15px;
+        letter-spacing: 6px;
+        font-weight: 700;
+        font-family: "Inter", sans-serif;
+    }
+    .bn{
+        margin-left: 60px;
+    }
+    h1{
+        font-size: 2em;
+        /*font-weight: bold;*/
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+    }
+    p{
+        font-family: "Inter", sans-serif;
+        font-size: 17px;
+        color: rgba(0, 0, 0, .5);
+
+    }
+    form{
+        margin-left: 70px;
+        background: white;
+        border-radius: 40px;
+        width: 440px;
+        height: 57px;
+        /*text-align: center;*/
+    }
+    input{
+        margin-left: 70px;
+        background: white;
+        /*border-radius: 30px;*/
+        border: 2px solid white;
+        font-size: 17px;
+    }
+    button{
+        background: royalblue;
+        padding: 10px;
+        color: white;
+        font-size: 17px;
+        text-transform: uppercase;
+
+        margin: 10px;
+        border-radius: 30px;
+
+    }
+</style>
+<body>
+<header>
+    <nav style="margin: 0;padding: 0;height: 70px;display: flex;justify-content: space-around;align-items: center;">
+        <div style="width: 30%"><img class="logo" src="https://preview.pichforest.com/kucra/layouts/images/logo-dark.png"  alt=""></div>
+        <ul style=" width:70%;display: flex; justify-content: space-evenly;list-style: none;flex-direction: row;align-items: center">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="">Feture</a></li>
+            <li><a href="">Client</a></li>
+            <li><a href="">pricing</a></li>
+            <li><a href="">faq</a></li>
+            <li><a href="">About</a></li>
+            <li id="show" ><a href="">blog</a>
+            <ul class="hidden" style="position: absolute;z-index: 1;background-color: #009900">
+                <li><a href="">block</a></li>
+                <li><a href="">block list</a></li>
+                <li><a href="">block details</a></li>
+            </ul>
+            </li>
+            <li><a href="">contact</a></li>
+            <li><a href=""><img src="https://mdi.bessarabov.com/img/icon/f/a/facebook.svg" width="20" height="50" alt=""></a></li>
+            <li><a href=""><img src="https://www.v0.app/api/image/mdi-twitter-icon.png?id=eyJmbiI6ImdldEljb25IZXJvSW1hZ2UiLCJhcmdzIjp7Imljb25TZXRTbHVnIjoibWRpIiwiaWNvblNsdWciOiJ0d2l0dGVyIn19" width="20" height="20" alt=""></a></li>
+            <li><a href=""><img src="https://mdi.bessarabov.com/img/icon/i/n/instagram.svg" width="20" height="50" alt=""></a></li>
+        </ul>
+    </nav>
+</header>
+<!---->
+<div style="display: flex; justify-content: space-evenly;align-items: center;background: #99CCFF">
+    <div style="width: 50%;display: flex;flex-direction: column;">
+        <h6 class="bn">AWESOME</h6>
+        <h1 class="bn">We are Startup <br>Creative Kucra Agency</h1>
+        <p class="bn">Carefully crafted after analyzing the needs of different <br>
+            industries and the design achieves a great balance <br>between purpose & presentation.</p>
+        <form  style="display: flex;flex-direction: row;" action="#">
+            <input type="text" class="control-form" id="inputemail" placeholder="Enter your email">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+    </div>
+<!--    -->
+    <div style="width: 50%;margin-top: 90px">
+        <img src="https://preview.pichforest.com/kucra/layouts/images/home/home1.png" alt="">
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài thưc hành 09</title>
+    <script type="text/javascript">
+        function warning() {
+            alert("Xin chào! Chào mừng bạn đến với trang web của tôi!")
+        }
+        //
+        function changecolor(){
+                        var random ='#' + Math.floor(Math.random()*16777215).toString(16)
+                        document.body.style.backgroundColor = random;
+                }
+                //
+        function showtext(){
+            var dv=document.getElementById("dv");
+            if(dv.style.display=='none'){
+                dv.style.display='block';
+            }else
+                dv.style.display='none';
+        }
+        //
+        function tinhtong(){
+            var number1=Number(document.getElementById("number1").value)
+            var number2=Number(document.getElementById("number2").value)
+            var sum=number1+number2
+            document.getElementById("hh").innerText="Tổng bằng: "+sum;
+        }
+        //
+
+        function countCharacters() {
+            var text = document.getElementById("textInput").value;
+            document.getElementById("charCount").innerText = text.length;
+        }
+    </script>
+</head>
+<body>
+<br>
+<button onclick="warning()">Cảnh báo</button>
+<hr>
+<div>
+    <h2>Đổi màu nền</h2>
+<button onclick="changecolor()">Nhấn để đổi màu nền</button></div>
+<hr>
+<div>
+    <h2>Đoạn văn: </h2>
+    <p id="dv"> Lập trình viên (người lập trình hay thảo chương viên điện toán) là người viết ra các chương trình máy tính.</p>
+    <button onclick="showtext()">Ẩn/Hiện</button>
+</div>
+<hr>
+<div>
+    <h2>Tính tổng 2 số: </h2>
+    <input type="number" name="number" id="number1" placeholder="nhập số thứ 1">
+    <input type="number" name="number2" id="number2" placeholder="nhập số thứ 2">
+    <button onclick="tinhtong()">Tính tổng</button>
+    <br>
+    <p id="hh"></p>
+</div>
+<hr>
+<div>
+    <h2>Đếm số ký tự</h2>
+    <input type="text" id="textInput" placeholder="Nhập ký tự..." oninput="countCharacters()">
+    <p>Số ký tự: <span id="charCount"></span></p>
+</div>
+<style>
+    #hh {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+    hr{
+        border: 1px solid black;
+    }
+</style>
+</body>
+</html>

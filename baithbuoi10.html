@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <style>
+        table {
+            width: 20%;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 2px;
+            /*text-align: center;*/
+        }
+        h2{
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Danh Mục Hàng Hóa</h2>
+<table id="product-list">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>$</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Iphone 9</td>
+        <td class="price">2700</td>
+        <td><button class="add-btn">Add</button></td>
+    </tr>
+    <tr>
+        <td>Samsung Star</td>
+        <td class="price">1500</td>
+        <td><button class="add-btn">Add</button></td>
+    </tr>
+    <tr>
+        <td>Nokia 2020</td>
+        <td class="price">1200</td>
+        <td><button class="add-btn">Add</button></td>
+    </tr>
+
+    <tr>
+        <td>Sony Xperia</td>
+        <td class="price">1700</td>
+        <td><button class="add-btn">Add</button></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Giỏ Hàng của bạn</h2>
+<table id="cart">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>$</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+<!--db-->
+    </tbody>
+</table>
+
+<h2><strong>Tổng số tiền: <span id="total-price">0</span>$</strong></h2>
+
+<script>
+    document.querySelectorAll(".add-btn").forEach(button => {
+        button.addEventListener("click", function() {
+            let row = this.closest("tr");
+            let productName = row.cells[0].innerHTML;
+            let productPrice = row.cells[1].innerHTML;
+            addToCart(productName, productPrice);
+        });
+    });
+    //
+    function addToCart(name, price) {
+        let cartBody = document.querySelector("#cart tbody");
+        let newRow = document.createElement("tr");
+
+        newRow.innerHTML = `
+                <td>${name}</td>
+                <td class="price">${price}</td>
+                <td><button class="delete-btn">Xóa</button></td>
+            `;
+
+        cartBody.appendChild(newRow);
+        calculateTotal();
+        newRow.querySelector(".delete-btn").addEventListener("click", function() {
+            this.closest("tr").remove();
+            calculateTotal();
+        });
+    }
+//
+    function calculateTotal() {
+        let total = 0;
+        document.querySelectorAll("#cart .price").forEach(priceCell => {
+            total += parseInt(priceCell.innerHTML);
+        });
+        document.getElementById("total-price").innerHTML = total.toLocaleString();
+    }
+</script>
+
+</body>
+</html>
